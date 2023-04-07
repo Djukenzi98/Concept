@@ -1,0 +1,38 @@
+
+// ---------------- USERS ----------------
+###
+GET http://localhost:3001/users
+Content-Type: application/json
+
+###
+POST http://localhost:3001/users/new
+Content-Type: application/json
+
+{ 
+	"firstName": "Djordje",
+  "lastName": "Stamenkovic",
+  "username": "djole",
+  "password": "djole"
+}
+
+// ---------------- TODOS ----------------
+###
+GET http://localhost:3001/todos
+Content-Type: application/json
+
+###
+POST http://localhost:3001/todo/new
+Content-Type: application/json
+
+{ 
+	"text": "Some stuff 2"
+}
+
+###
+DELETE http://localhost:3001/todo/delete/642f3f43a4e651b1c348e3f9
+
+###
+PUT http://localhost:3001/todo/complete/642f3f43a4e651b1c348e3f9
+
+###
+GET http://localhost:3001/users
