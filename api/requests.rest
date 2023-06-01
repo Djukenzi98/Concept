@@ -5,6 +5,14 @@ GET http://localhost:3001/users
 Content-Type: application/json
 
 ###
+GET http://localhost:3001/users/id=642f33ac9f298262105953a9
+Content-Type: application/json
+
+###
+GET http://localhost:3001/users/username=djole&password=djole
+Content-Type: application/json
+
+###
 POST http://localhost:3001/users/new
 Content-Type: application/json
 
@@ -13,6 +21,53 @@ Content-Type: application/json
   "lastName": "Stamenkovic",
   "username": "djole",
   "password": "djole"
+}
+
+
+// ---------------- CONCEPTS ----------------
+###
+GET http://localhost:3001/concepts
+Content-Type: application/json
+
+###
+POST http://localhost:3001/concepts/new
+Content-Type: application/json
+
+{
+	"title": "Mizandrija",
+	"description": "Mrznja prema muskarcima."
+}
+
+###
+POST http://localhost:3001/concepts/new
+Content-Type: application/json
+
+{
+	"title": "DJOLENCE",
+	"category": "philosophy"
+}
+
+###
+DELETE http://localhost:3001/concepts/delete/643946ce5ef221628fc285b4
+Content-Type: application/json
+
+###
+PUT http://localhost:3001/concepts/edit
+Content-Type: application/json
+
+{
+	"_id": "644950e977afd65b4de4c821",
+	"description": "yaya"
+}
+
+###
+PUT http://localhost:3001/concepts/edit
+Content-Type: application/json
+
+{
+	"_id": "6441ad19bd21173f2132e92d",
+	"title": "3",
+	"description": "3"
 }
 
 // ---------------- TODOS ----------------
@@ -24,7 +79,7 @@ Content-Type: application/json
 POST http://localhost:3001/todo/new
 Content-Type: application/json
 
-{ 
+{
 	"text": "Some stuff 2"
 }
 

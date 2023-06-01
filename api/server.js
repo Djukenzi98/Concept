@@ -10,6 +10,7 @@ app.use(cors());
 // Collections
 app.use(require("./models/Todo"));
 app.use(require("./models/User"));
+app.use(require("./models/Concept"));
 
 // Connecting to database
 mongoose

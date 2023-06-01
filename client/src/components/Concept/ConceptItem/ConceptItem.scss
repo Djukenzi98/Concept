@@ -1,0 +1,45 @@
+.concept-item {
+  position: relative;
+  border: 1px solid rgb(15, 24, 189);
+  background-color: rgb(205, 153, 75);
+  padding: 20px;
+  text-align: center;
+  flex-basis: 50%;
+  // width: 50%;
+
+  // margin: 10px;
+}
+
+.concept-item__options {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+}
+
+.concept-item__close {
+  font-weight: bold;
+  font-size: 20px;
+  color: black !important;
+
+  border: 1px solid transparent;
+  background-color: transparent;
+
+  &:hover {
+    border-color: red;
+  }
+}
+
+.concept-item__edit {
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background-color: transparent;
+  // color: red;
+  &:hover {
+    border-color: red;
+  }
+}
+
+.concept-item__edit-icon {
+  width: 20px;
+  height: 20px;
+}

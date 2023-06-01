@@ -1,0 +1,23 @@
+//-----------------------------------------
+JWT Authentification
+https://www.youtube.com/watch?v=mbsmsi7l3r4&ab_channel=WebDevSimplified
+
+
+//-----------------------------------------
+IDEAS
+- Gamification: 
+	Add gamification elements such as badges, levels, or rewards
+	to make completing tasks more fun and motivating.
+
+- Analitics
+
+- Test your knowledge
+
+- No-answer-having a debate questions
+
+-Segment za odvale i provale
+
+//-----------------------------------------
+DESIGN
+- On mobile, one element, scrollable on the X axis
+	with new colors for background
