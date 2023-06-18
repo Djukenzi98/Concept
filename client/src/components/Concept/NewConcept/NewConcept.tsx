@@ -1,11 +1,10 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { useForm } from "react-hook-form";
 import Concept from "../../../types/Concept";
 import { useAppDispatch } from "../../../redux/store";
 import { saveConcept } from "../../../redux/Concept/conceptsSlice";
 
-const NewConcept = ({ open, onClose }: any) => {
+const NewConcept = ({ onClose }: any) => {
   const {
     register,
     handleSubmit,
@@ -22,13 +21,9 @@ const NewConcept = ({ open, onClose }: any) => {
       });
   };
 
-  if (!open) return null;
-
-  return ReactDOM.createPortal(
-    <div>
-      <div className="overlay"></div>
-      <form onSubmit={handleSubmit(onSubmit)} className="new-concept">
-        <button onClick={onClose}>X</button>
+  return (
+    <>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <h3>Create new concept</h3>
         <p>
           <label htmlFor="title">Title:</label>
@@ -62,8 +57,7 @@ const NewConcept = ({ open, onClose }: any) => {
         </p>
         <button type="submit">CREATE</button>
       </form>
-    </div>,
-    document.getElementById("portal") as Element
+    </>
   );
 };
 

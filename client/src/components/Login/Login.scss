@@ -1,7 +1,43 @@
-.login-form {
+.login {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: rgb(0, 0, 0);
+}
+
+.login__concept-banner {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  color: white;
+  position: relative;
+  text-align: center;
+  font-size: 80px;
+  width: 100%;
+  // font-family: "OCR A";
+  font-family: "Orbitron";
+  padding-top: 15px;
+  padding-bottom: 20px;
+  cursor: pointer;
+}
+
+// .concept-banner__line {
+//   display: inline-block;
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+//   height: 5px;
+//   margin: auto;
+//   width: 100%;
+//   background-color: black;
+// }
+
+.login-form {
+  // height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

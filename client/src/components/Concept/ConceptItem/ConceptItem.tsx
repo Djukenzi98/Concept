@@ -2,6 +2,7 @@ import React, { MouseEventHandler, useState } from "react";
 import Concept from "../../../types/Concept";
 import EditConcept from "../EditConcept/EditConcept";
 import editIcon from "../../../assets/icons/edit2.png";
+import Modal from "../../Helpers/Modal/Modal";
 
 type ConceptItemProps = {
   concept: Concept;
@@ -15,6 +16,7 @@ const Categories = {
 
 const ConceptItem = ({ concept, onClose }: ConceptItemProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const closeModal = () => setIsOpen(false);
 
   const getColor = () => {
     switch (concept.category) {
@@ -28,18 +30,7 @@ const ConceptItem = ({ concept, onClose }: ConceptItemProps) => {
   };
 
   return (
-    <li
-      className="concept-item"
-      style={{ backgroundColor: getColor() }}
-      onMouseOver={(e) => {
-        e.stopPropagation();
-        console.log(
-          "%c e ",
-          "font-size: 15px; background-color: lightblue; color: black",
-          e
-        );
-      }}
-    >
+    <li className="concept-item" style={{ backgroundColor: getColor() }}>
       {concept.title && <div>Title: {concept.title}</div>}
       {concept.description && <div>Description: {concept.description}</div>}
       {concept.example && <div>Example: {concept.example}</div>}
@@ -55,15 +46,12 @@ const ConceptItem = ({ concept, onClose }: ConceptItemProps) => {
             setIsOpen(true);
           }}
         >
-          {/* Edit */}
           <img className="concept-item__edit-icon" src={editIcon} alt="dada" />
         </button>
       </div>
-      <EditConcept
-        concept={concept}
-        open={isOpen}
-        onClose={() => setIsOpen(false)}
-      />
+      <Modal open={isOpen} onClose={closeModal}>
+        <EditConcept concept={concept} onClose={closeModal} />
+      </Modal>
     </li>
   );
 };

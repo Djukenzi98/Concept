@@ -1,11 +1,10 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { useForm } from "react-hook-form";
 import Concept from "../../../types/Concept";
 import { useAppDispatch } from "../../../redux/store";
 import { updateConcept } from "../../../redux/Concept/conceptsSlice";
 
-const EditConcept = ({ open, onClose, concept }: any) => {
+const EditConcept = ({ onClose, concept }: any) => {
   const {
     register,
     handleSubmit,
@@ -30,13 +29,9 @@ const EditConcept = ({ open, onClose, concept }: any) => {
       });
   };
 
-  if (!open) return null;
-
-  return ReactDOM.createPortal(
-    <div>
-      <div className="overlay"></div>
+  return (
+    <>
       <form onSubmit={handleSubmit(onSubmit)} className="edit-concept">
-        <button onClick={onClose}>X</button>
         <h3>Edit concept</h3>
         <p>
           <label htmlFor="title">Title:</label>
@@ -56,8 +51,7 @@ const EditConcept = ({ open, onClose, concept }: any) => {
         </p>
         <button type="submit">Save</button>
       </form>
-    </div>,
-    document.getElementById("portal") as Element
+    </>
   );
 };
 
